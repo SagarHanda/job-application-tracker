@@ -1,0 +1,29 @@
+
+### Add a job application
+POST http://localhost:8080/api/applications
+Content-Type: application/json
+
+{
+  "jobTitle": "Java Developer",
+  "company": "Accenture",
+  "location": "Bangalore",
+  "jobUrl": "https://www.accenture.com",
+  "status": "APPLIED",
+  "appliedDate": "2026-11-09",
+  "notes": "Applied for Java Developer role"
+}
+
+### Get all job applications
+GET http://localhost:8080/api/applications
+
+### Delete duplicate 2
+DELETE http://localhost:8080/api/applications/2
+
+### Delete duplicate 3
+DELETE http://localhost:8080/api/applications/3
+
+### Delete duplicate 4
+DELETE http://localhost:8080/api/applications/4
+
+### Delete duplicate 5
+DELETE http://localhost:8080/api/applications/5

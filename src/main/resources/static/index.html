@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerTrack | Job Application Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <h1>CareerTrack</h1>
+            <p>Your personal job search dashboard</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <h2>Welcome to CareerTrack 👋</h2>
+                <p>Track your applications. Stay organized. Get hired.</p>
+            </div>
+            <button id="addJobBtn" class="primary-btn">+ Add Application</button>
+        </section>
+
+        <section class="dashboard">
+            <div class="stat-card">
+                <h3>Total Applications</h3>
+                <p id="totalCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Applied</h3>
+                <p id="appliedCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Interviews</h3>
+                <p id="interviewCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Offers</h3>
+                <p id="offerCount">0</p>
+            </div>
+        </section>
+
+        <section class="applications-section">
+            <div class="section-heading">
+                <h2>My Applications</h2>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search company or job title..."
+                >
+            </div>
+
+            <div class="filters">
+                <select id="statusFilter">
+                    <option value="">All Statuses</option>
+                    <option value="SAVED">Saved</option>
+                    <option value="APPLIED">Applied</option>
+                    <option value="ASSESSMENT">Assessment</option>
+                    <option value="INTERVIEW">Interview</option>
+                    <option value="OFFER">Offer</option>
+                    <option value="REJECTED">Rejected</option>
+                </select>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Company</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Applied Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="applicationTable">
+                        <tr>
+                            <td colspan="6">Loading applications...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="formSection" class="form-section">
+            <h2 id="formTitle">Add New Application</h2>
+
+            <form id="applicationForm">
+                <input type="hidden" id="applicationId">
+
+                <div class="form-grid">
+                    <input type="text" id="jobTitle" placeholder="Job Title" required>
+
+                    <input type="text" id="company" placeholder="Company Name" required>
+
+                    <input type="text" id="location" placeholder="Location">
+
+                    <input type="url" id="jobUrl" placeholder="Job URL">
+
+                    <select id="status" required>
+                        <option value="SAVED">Saved</option>
+                        <option value="APPLIED">Applied</option>
+                        <option value="ASSESSMENT">Assessment</option>
+                        <option value="INTERVIEW">Interview</option>
+                        <option value="OFFER">Offer</option>
+                        <option value="REJECTED">Rejected</option>
+                    </select>
+
+                    <input type="date" id="appliedDate">
+                </div>
+
+                <textarea id="notes" placeholder="Additional notes..."></textarea>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-btn">Save Application</button>
+                    <button type="button" id="cancelBtn" class="secondary-btn">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CareerTrack © 2026 | Built with Java Spring Boot</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
